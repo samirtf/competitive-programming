@@ -1,5 +1,6 @@
 from unittest import TestCase
-from SumNumbers import SumNumbers
+from src.dp.SumNumbers import SumNumbers
+
 
 class TestSumNumbers(TestCase):
     def setUp(self):

@@ -22,7 +22,8 @@ class SumNumbers:
             return 1
         return self.sum_numbers_recursive(n - 1) + n
 
-    def sum_numbers_dp(self, n):
+    @staticmethod
+    def sum_numbers_dp(n):
         memo = [None] * (n + 1)
         memo[0] = 0
         for i in range(1, n + 1):

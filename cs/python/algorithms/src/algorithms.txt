@@ -1,0 +1,9 @@
+Dynamic Programming
+    is an optimization technique that can be used to solve different optimization and combinatorial problems.
+
+    Framework:
+        1. Define the objective function.
+        2. Identify base cases.
+        3. Recurrence relation - Write down the transition function.
+        4. Identify the order of execution.
+        5. Identify the location of the answer.
