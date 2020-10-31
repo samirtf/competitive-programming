@@ -18,34 +18,35 @@
 #   5. Where to look for the answer?
 #       f(n)
 #
-#
-#
+
 
 class StaircaseWithUp3steps:
 
-    def climbStairsWithUp3Steps(self, ithStep):
-        if ithStep == 0 or ithStep == 1:
+    @staticmethod
+    def climb_stairs_with_up_3_steps(ith_step):
+        if ith_step == 0 or ith_step == 1:
             return 1
-        if ithStep == 2:
+        if ith_step == 2:
             return 2
-        memo = [None] * (ithStep + 1)
+        memo = [None] * (ith_step + 1)
         memo[0] = 1
         memo[1] = 1
         memo[2] = 2
-        for i in range(3, ithStep + 1):
+        for i in range(3, ith_step + 1):
             memo[i] = memo[i - 1] + memo[i - 2] + memo[i - 3]
-        return memo[ithStep]
+        return memo[ith_step]
 
-    def climbStairsWithUp3StepsOptimized(self, ithStep):
-        if ithStep == 0 or ithStep == 1:
+    @staticmethod
+    def climb_stairs_with_up_3_steps_optimized(ith_step):
+        if ith_step == 0 or ith_step == 1:
             return 1
-        if ithStep == 2:
+        if ith_step == 2:
             return 2
         a = 1
         b = 1
         c = 2
         r = 0
-        for i in range(3, ithStep + 1):
+        for i in range(3, ith_step + 1):
             r = a + b + c
             a = b
             b = c

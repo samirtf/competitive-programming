@@ -13,20 +13,19 @@ class TestStaircase(TestCase):
         tracemalloc.stop()
 
     def test_find_number_of_distinct_ways_to_reach(self):
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(0), 1)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(1), 1)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(2), 2)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(3), 3)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(4), 5)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(5), 8)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(6), 13)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(7), 21)
-        self.assertEqual(self.staircase.findNumberOfDistinctWaysToReach(8), 34)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(0), 1)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(1), 1)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(2), 2)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(3), 3)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(4), 5)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(5), 8)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(6), 13)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(7), 21)
+        self.assertEqual(self.staircase.find_number_of_distinct_ways_to_reach(8), 34)
 
     def test_find_number_of_distinct_ways_to_reach_optimized(self):
         snapshot1 = tracemalloc.take_snapshot()
-        number_of_ways = self.staircase.findNumberOfDistinctWaysToReach(50000)
-        # self.assertEqual(, 34)
+        number_of_ways = self.staircase.find_number_of_distinct_ways_to_reach(50000)
         snapshot2 = tracemalloc.take_snapshot()
 
         top_stats = snapshot2.compare_to(snapshot1, 'lineno')

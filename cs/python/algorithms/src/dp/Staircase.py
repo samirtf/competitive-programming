@@ -57,27 +57,30 @@
 #       f(n)
 #
 
+
 class Staircase:
 
     # Time complexity: O(n)
     # Space complexity: O(n)
-    def findNumberOfDistinctWaysToReach(self, ithStep):
-        if ithStep == 0 or ithStep == 1:
+    @staticmethod
+    def find_number_of_distinct_ways_to_reach(ith_step):
+        if ith_step == 0 or ith_step == 1:
             return 1
-        memo = [None] * (ithStep + 1)
+        memo = [None] * (ith_step + 1)
         memo[0] = 1
         memo[1] = 1
-        for i in range(2, ithStep + 1):
+        for i in range(2, ith_step + 1):
             memo[i] = memo[i - 1] + memo[i - 2]
-        return memo[ithStep]
+        return memo[ith_step]
 
-    def findNumberOfDistinctWaysToReachOptimized(self, ithStep):
-        if ithStep == 0 or ithStep == 1:
+    @staticmethod
+    def find_number_of_distinct_ways_to_reach_optimized(ith_step):
+        if ith_step == 0 or ith_step == 1:
             return 1
         a = 1
         b = 1
         c = 0
-        for i in range(2, ithStep + 1):
+        for i in range(2, ith_step + 1):
             c = a + b
             a = b
             b = c
