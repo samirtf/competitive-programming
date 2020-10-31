@@ -21,6 +21,8 @@
 
 class StaircaseWithUpKSteps:
 
+    # Time complexity: O(nk)
+    # Space complexity: O(n)
     @staticmethod
     def climb_stairs_with_up_3_steps(ith_step, k):
         if ith_step == 0 or ith_step == 1:
@@ -34,3 +36,19 @@ class StaircaseWithUpKSteps:
                     continue
                 memo[i] += memo[i - j]
         return memo[ith_step]
+
+
+    # Time complexity: O(nk)
+    # Space complexity: O(k)
+    def climb_stairs_with_up_3_steps_optimized(ith_step, k):
+        if ith_step == 0 or ith_step == 1:
+            return 1
+        memo = [0] * k
+        memo[0] = 1
+        # [0 0 0]
+        for i in range(1, ith_step + 1):
+            for j in range(1, k):
+                if i - j < 0:
+                    continue
+                memo[i % k] += memo[(i - j) % k]
+        return memo[ith_step % k]
