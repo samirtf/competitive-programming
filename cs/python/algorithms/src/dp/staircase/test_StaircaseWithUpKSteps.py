@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.dp.StaircaseWithUpKSteps import StaircaseWithUpKSteps
+from src.dp.staircase.StaircaseWithUpKSteps import StaircaseWithUpKSteps
 
 
 class TestStaircaseWithUpKSteps(TestCase):
