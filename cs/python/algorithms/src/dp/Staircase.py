@@ -59,9 +59,11 @@
 
 class Staircase:
     def findNumberOfDistinctWaysToReach(self, ithStep):
+        if ithStep == 0 or ithStep == 1:
+            return 1
         memo = [None] * (ithStep + 1)
         memo[0] = 1
         memo[1] = 1
-        for i in range(3, ithStep + 1):
-            memo[i] = memo[i - 1] + memo[i - 1]
+        for i in range(2, ithStep + 1):
+            memo[i] = memo[i - 1] + memo[i - 2]
         return memo[ithStep]
